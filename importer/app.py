@@ -1,13 +1,13 @@
 import asyncio
 
-from base_data_source import OnlinerDataSource
+from datasource.onliner import OnlinerDataSource
 
 class BaseImporter:
 
     async def init(self):
         async with OnlinerDataSource() as base_importer:
             items = await base_importer.get_items()
-            print(items)
+            # print(items)
             for page in items:
                 print(len(page))
 
